@@ -22,9 +22,9 @@ SR_DGN.Cal_Spatial_Net(adata, k_cutoff=6,model='KNN')
 SR_DGN.Stats_Spatial_Net(adata)
 adata = SR_DGN.train(adata)
 
-sc.pp.neighbors(adata, use_rep='SR_DGN')
+sc.pp.neighbors(adata, use_rep='SR-DGN')
 sc.tl.umap(adata)
-adata = SR_DGN.mclust_R(adata, used_obsm='SR_DGN', num_cluster=11)
+adata = SR_DGN.mclust_R(adata, used_obsm='SR-DGN', num_cluster=11)
 
 obs_df = adata.obs.dropna()
 ARI = adjusted_rand_score(obs_df['mclust'], obs_df["Region"])
