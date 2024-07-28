@@ -8,7 +8,7 @@ import os
 import sys
 from sklearn.metrics.cluster import adjusted_rand_score
 import SR_DGN
-os.environ['R_HOME'] = '/home/dell/anaconda3/envs/stagate/lib/R'
+os.environ['R_HOME'] = '/home/dell/anaconda3/envs/stpython/lib/R'
 
 adata = sc.read('Data/OSM/osmFISH_codeluppi2018spatial_cortex_data.h5ad')
 adata.var_names_make_unique()
