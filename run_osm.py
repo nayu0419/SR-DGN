@@ -21,9 +21,6 @@ sc.pp.scale(adata, zero_center=False, max_value=10)
 SR_DGN.Cal_Spatial_Net(adata, k_cutoff=6,model='KNN')
 SR_DGN.Stats_Spatial_Net(adata)
 adata = SR_DGN.train(adata)
-
-sc.pp.neighbors(adata, use_rep='SR-DGN')
-sc.tl.umap(adata)
 adata = SR_DGN.mclust_R(adata, used_obsm='SR-DGN', num_cluster=11)
 
 obs_df = adata.obs.dropna()
