@@ -9,7 +9,7 @@ import sys
 from sklearn.metrics.cluster import adjusted_rand_score
 import SR_DGN
 from SR_DGN.utils import refine_label
-os.environ['R_HOME'] = '/home/dell/anaconda3/envs/stagate/lib/R'
+os.environ['R_HOME'] = '/home/dell/anaconda3/envs/stpython/lib/R'
 
 slide_id =9.5
 slide_id =10.5
@@ -36,26 +36,6 @@ adata = SR_DGN.mclust_R(adata, used_obsm='SR-DGN', num_cluster=k)
 new_type = refine_label(adata, radius=20, key='mclust')
 adata.obs['refine'] = new_type
 
-adata.obs.to_csv("embryo125.csv")
 obs_df = adata.obs.dropna()
-ARI = adjusted_rand_score(obs_df['mclust'], obs_df["annotation"])
-print('Adjusted rand index = %.5f' % ARI)
-
-
 ARI = adjusted_rand_score(obs_df['refine'], obs_df["annotation"])
 print('refine Adjusted rand index = %.5f' % ARI)
-
-
-sc.pl.umap(adata, color="mclust", title='SR_DGN')
-
-title = 'SR_DGN(ARI=%.2f)'%ARI
-ax = sc.pl.embedding(adata, alpha=1, color="mclust", legend_fontsize=18, show=False,basis="spatial",
-                   size=100000 / adata.shape[0])
-
-ax.set_title(title, fontsize=23)
-ax.set_aspect('equal', 'box')
-ax.set_xticks([])
-ax.set_yticks([])
-ax.axes.invert_yaxis()
-plt.savefig("figures/embryo_E%.1f.pdf"%slide_id)
-plt.close()
