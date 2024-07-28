@@ -25,21 +25,10 @@ adata = SR_DGN.train(adata)
 sc.pp.neighbors(adata, use_rep='SR_DGN')
 sc.tl.umap(adata)
 adata = SR_DGN.mclust_R(adata, used_obsm='SR_DGN', num_cluster=11)
-adata.obs.to_csv("osm.csv")
+
 obs_df = adata.obs.dropna()
 ARI = adjusted_rand_score(obs_df['mclust'], obs_df["Region"])
 print('Adjusted rand index = %.5f' % ARI)
 
-title = 'SR_DGN(ARI=%.2f)'%ARI
-ax = sc.pl.embedding(adata, alpha=1, color="mclust", legend_fontsize=18, show=False,basis="spatial",
-                   size=100000 / adata.shape[0])
-
-ax.set_title(title, fontsize=23)
-ax.set_aspect('equal', 'box')
-ax.set_xticks([])
-ax.set_yticks([])
-ax.axes.invert_yaxis()
-plt.savefig("figures/osmFISH-0.pdf")
-plt.close()
 
 
