@@ -32,10 +32,16 @@ You'll need to install the following packages in order to run the codes.
   python  run_slide.py
   ```
 
-- somatosensory cortex embryos:
+- embryos:
 
   ```python  
-  python embryo.py
+  python run_embryo.py
+  ```
+
+  - somatosensory cortex:
+
+  ```python  
+  python run_osm.py
   ```
 
 - olfactory bulb(Slide-seqV2):
