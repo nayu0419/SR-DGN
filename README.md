@@ -52,7 +52,7 @@ All datasets used in this paper are available for download from the following we
   python run_embryo.py
   ```
 
-  - somatosensory cortex:
+- somatosensory cortex:
 
   ```python  
   python run_osm.py
