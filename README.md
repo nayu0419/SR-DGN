@@ -1,4 +1,4 @@
-# SR-DGN: a novel deep graph network for revealing spatial heterogeneity in tissues
+# Deciphering spatial domains from spatially resolved transcriptomics through spatially regularized deep graph networks
 
 ![](./Fig_1.png)
 
