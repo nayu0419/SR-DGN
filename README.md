@@ -66,7 +66,7 @@ All datasets used in this paper are available for download from the following we
   python run_mob2.py
   ```
 
-  - mouse frontal cortex (MERFISH 3D):
+- mouse frontal cortex (MERFISH 3D):
 
   ```python  
   python run_3D.py
