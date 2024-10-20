@@ -31,7 +31,7 @@ All datasets used in this paper are available for download from the following we
 
 (5) Stereo-seq mouse embryos data: https://db.cngb.org/stomics/mosta/.
 
-(6) MERFISH mouse frontal cortex data: https://cellxgene.cziscience.com/collections/31937775-0602-4e52-a799-b6acdd2bac2e.
+(6) MERFISH mouse frontal cortex data: https://cellxgene.cziscience.com/collections/31937775-0602-4e52-a799-b6acdd2bac2e/.
 
 
 ## Tutorial
